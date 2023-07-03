@@ -23,7 +23,13 @@ return {
       end
       root = util.root_pattern 'lua/'(fname)
       if root then
-        return root .. '/lua/'
+        root = root .. '/lua/'
+        local git = util.find_git_ancestor(fname)
+        if git and #git > #root then
+          return git
+        else
+          return root
+        end
       end
       return util.find_git_ancestor(fname)
     end,
