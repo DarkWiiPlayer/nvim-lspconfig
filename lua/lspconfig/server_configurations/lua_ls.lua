@@ -1,13 +1,15 @@
 local util = require 'lspconfig.util'
 
 local root_files = {
+  '.busted',
+  '.luacheckrc',
   '.luarc.json',
   '.luarc.jsonc',
-  '.luacheckrc',
   '.stylua.toml',
-  'stylua.toml',
+  'config.ld',
   'selene.toml',
   'selene.yml',
+  'stylua.toml',
 }
 
 return {
@@ -78,7 +80,7 @@ See `lua-language-server`'s [documentation](https://github.com/luals/lua-languag
 
 ]],
     default_config = {
-      root_dir = [[root_pattern(".luarc.json", ".luarc.jsonc", ".luacheckrc", ".stylua.toml", "stylua.toml", "selene.toml", "selene.yml", ".git")]],
+      root_dir = [[root_pattern(".luarc.json", ".busted", ".luacheckrc", ".luarc.jsonc", ".stylua.toml", "config.ld", "selene.toml", "selene.yml", "stylua.toml")]],
     },
   },
 }
